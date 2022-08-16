@@ -11,3 +11,4 @@ services:
     #erp.inquiryImporter: App\Model\Erp\Importer\InquiryImporter(@erp.pohodaXml)
     # COMMANDS
     - App\Console\Foo\FooCommand
+    - App\Console\DeployCommand

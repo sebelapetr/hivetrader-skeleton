@@ -1,4 +1,9 @@
 parameters:
+    deployer:
+        protocol: "" # ftp|ftps
+        user: ""
+        password: ""
+        scheme: ""
 
 dbal:
 	connectionTz: auto-offset

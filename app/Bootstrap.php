@@ -16,6 +16,8 @@ class Bootstrap
 		$configurator = new Configurator;
 		$appDir = dirname(__DIR__);
         define("WWW_DIR", __DIR__.'/../www');
+        define("ROOT_DIR", __DIR__.'/../');
+        define("LOG_DIR", __DIR__.'/../log');
 
 		$configurator->enableTracy($appDir . '/log');
 
@@ -27,7 +29,7 @@ class Bootstrap
 			->register();
 
 		$configurator->addConfig($appDir . '/app/config/common.neon');
-        if (!isset($_SERVER["SESSIONNAME"]) || $_SERVER["SESSIONNAME"] !== "Console") {
+        if (!isset($_SERVER["SESSIONNAME"]) || $_SERVER["SESSIONNAME"] !== "Console") { //todo check console
             $isApi = substr($_SERVER['REQUEST_URI'], 0, 4) === '/api';
             if ($isApi) {
                 $configurator->addConfig($appDir . '/app//config/apitte.neon');

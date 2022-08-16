@@ -15,9 +15,6 @@ class OrdersPresenter extends BaseAdminPresenter
 {
     public Order $order;
 
-    /** @inject */
-    public ExportPdf $exportPdf;
-
     public function actionDefault(): void
     {
     }

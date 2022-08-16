@@ -58,7 +58,7 @@ class Poster extends Entity
     public const THEME_FLOWERS = "FLOWERS";
     public const THEME_PURPLE_FLOWERS = "PURPLE_FLOWERS";
 
-    public function getBasicThemes()
+    public function getBasicThemes(): array
     {
         return [
             self::THEME_BLACK => 'BLACK',
@@ -67,7 +67,7 @@ class Poster extends Entity
         ];
     }
 
-    public function getBorderThemes()
+    public function getBorderThemes(): array
     {
         return [
             self::THEME_BLACK_BORDER => 'BLACK_BORDER',
@@ -86,7 +86,7 @@ class Poster extends Entity
         ];
     }
 
-    public function getPictureThemes()
+    public function getPictureThemes(): array
     {
         return [
             self::THEME_PURPLE_FLOWERS => 'PURPLE_FLOWERS',
@@ -95,12 +95,12 @@ class Poster extends Entity
         ];
     }
 
-    public function getTagLine()
+    public function getTagLine(): string
     {
         return ($this->latitudeText ? $this->latitudeText  : '50.1089629'). '°N / ' . ($this->longitudeText ? $this->longitudeText : '14.4300655') . '°E';
     }
 
-    public function getCzechMonth()
+    public function getCzechMonth(): string
     {
         switch ($this->date->format('m'))
         {
@@ -131,7 +131,7 @@ class Poster extends Entity
         }
     }
 
-    public function getFontColorByTheme()
+    public function getFontColorByTheme(): string
     {
         switch ($this->theme)
         {
@@ -155,7 +155,7 @@ class Poster extends Entity
         }
     }
 
-    public function getMapColorByTheme()
+    public function getMapColorByTheme(): string
     {
         switch ($this->theme)
         {
@@ -177,7 +177,7 @@ class Poster extends Entity
         }
     }
 
-    public function getMapBackgroundColorByTheme()
+    public function getMapBackgroundColorByTheme(): string
     {
         switch ($this->theme)
         {
